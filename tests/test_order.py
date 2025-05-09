@@ -28,7 +28,7 @@ class TestOrder:
         rent_page.fill_rent_form(rent_period, color)
         rent_page.click_bottom_to_order_in_rent_form()
         rent_page.click_yes_to_order()
-        response = rent_page.wait_for_element(RentPageLocators.ORDER_COMPLETE)
+        response = rent_page.wait_for_order_complete()
         assert response.is_displayed()
 
 

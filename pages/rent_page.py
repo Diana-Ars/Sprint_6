@@ -3,6 +3,7 @@ import pytest
 
 from pages.base_page import BasePage
 from locators.rent_page_locators import RentPageLocators
+from datetime import datetime, timedelta
 
 
 class RentPage(BasePage):
@@ -23,6 +24,10 @@ class RentPage(BasePage):
     def click_yes_to_order(self):
         self.wait_for_element(RentPageLocators.FINISH_ORDER)
         self.click_on_element(RentPageLocators.BUTTON_YES)
+
+    @allure.step('Подождать загрузку окна "Заказ оформлен"')
+    def wait_for_order_complete(self):
+        self.wait_for_element(RentPageLocators.ORDER_COMPLETE)
 
 
 

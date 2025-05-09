@@ -23,4 +23,4 @@ class RentPageLocators:
         tomorrow = datetime.now() + timedelta(days=1)
         day = tomorrow.day
         day_str = f"{day:02}"
-        return By.XPATH, f"//div[@class='react-datepicker__day react-datepicker__day--0{day_str}']"
+        return By.XPATH, f"//div[contains(@class, 'react-datepicker__day react-datepicker__day--0{day_str}')]"

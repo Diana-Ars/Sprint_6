@@ -32,4 +32,16 @@ class BasePage:
         element = self.wait_for_element(locator, timeout)
         return element.text
 
+    @allure.step("Подождать загрузку новой вкладки")
+    def wait_for_open_new_window(self, locator, timeout=10):
+        windows = self.driver.window_handles
+        self.click_on_element(locator, timeout)
+        WebDriverWait(self.driver,timeout).until(lambda d: len(d.window_handles) > len(windows))
+
+
+    @allure.step("Перейти на новую вкладку")
+    def switch_to_new_window(self):
+        self.driver.switch_to.window(self.driver.window_handles[-1])
+
+
 

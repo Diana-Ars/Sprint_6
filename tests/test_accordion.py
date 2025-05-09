@@ -10,7 +10,7 @@ class TestAccordion:
     @pytest.mark.parametrize('accordion_number', range(8))
     def test_accordion(self, driver, accordion_number ):
         main_page = MainPage(driver)
-        main_page.wait_for_element(MainPageLocators.MAIN_PAGE, 7)
+        main_page.wait_for_main_page()
         main_page.click_on_accordion(accordion_number)
         assert main_page.check_accordion_panel_text(accordion_number)
 

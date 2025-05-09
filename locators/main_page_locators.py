@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 
 class MainPageLocators:
-    MAIN_PAGE = By.CLASS_NAME, 'Home_FirstPart__3g6vG'
+    MAIN_PAGE = By.XPATH, "//div[contains(@class, 'Home_FirstPart__3g6vG')]"
     ORDER_BUTTON_TOP = By.CLASS_NAME, 'Button_Button__ra12g'
     ORDER_BUTTON_BOTTOM = By.CLASS_NAME,'Button_Button__ra12g Button_Middle__1CSJM'
 

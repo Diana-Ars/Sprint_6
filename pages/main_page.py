@@ -7,6 +7,11 @@ from locators.main_page_locators import MainPageLocators
 
 
 class MainPage(BasePage):
+    @allure.step("Подождать загрузку главной страницы")
+    def wait_for_main_page(self):
+        self.wait_for_element(MainPageLocators.MAIN_PAGE, 10)
+        return self.driver.find_element(*MainPageLocators.MAIN_PAGE)
+
     @allure.step("Кликнуть на выпадающий список")
     def click_on_accordion(self, accordion_panel_number):
         accordion_panel_locator = MainPageLocators.accordion_panel_number(accordion_panel_number)
